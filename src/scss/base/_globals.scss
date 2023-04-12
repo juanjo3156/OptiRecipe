@@ -1,0 +1,6 @@
+@use 'variables' as v;
+
+h1{
+    font-family: v.$principal_font;
+    font-size: 3.5rem;
+}
