@@ -1,6 +1,19 @@
 @use 'variables' as v;
 
+body{
+    background-color: #e5e5e5;
+}
 h1{
     font-family: v.$principal_font;
     font-size: 3.5rem;
+}
+a{
+    text-decoration: none;
+    color: v.$black;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
 }
