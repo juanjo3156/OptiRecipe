@@ -12,9 +12,8 @@
     <title>OptiRecipe - Inicio</title>
 </head>
 <body>
-    <header>
+    <header class ="header container">
         <a href="<?php echo RUTA?>index.php">
-            <h1>OptiRecipe</h1>
+            <h1 class="header__title">OptiRecipe</h1>
         </a>
-        
     </header>
