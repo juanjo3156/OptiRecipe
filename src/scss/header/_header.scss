@@ -1,0 +1,13 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    text-align: center;    
+
+    &__title{
+        font-family: v.$secundary_font;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #d1d1d1;
+    }
+
+}
