@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <title>OptiRecipe - Inicio</title>
+    <script src="https://kit.fontawesome.com/9324a5a112.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class ="header container">
@@ -17,5 +18,7 @@
             <h1 class="header__title">OptiRecipe</h1>
         </a>
 
-        <a href="<?php echo RUTA?>help.php">?</a>
+        <a href="<?php echo RUTA?>help.php">
+            <h3 class="header__help"><i class="fa-solid fa-question"></i></h3>
+        </a>
     </header>
