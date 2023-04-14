@@ -1,0 +1,12 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.instructions{
+    &__tittle{
+        text-align: center;
+    }
+    &__content{
+        text-align: justify;
+    }
+    
+}
