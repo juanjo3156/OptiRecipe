@@ -16,4 +16,6 @@
         <a href="<?php echo RUTA?>index.php">
             <h1 class="header__title">OptiRecipe</h1>
         </a>
+
+        <a href="<?php echo RUTA?>help.php">?</a>
     </header>
