@@ -353,7 +353,6 @@ a {
 }
 .header__help {
   text-align: center;
-  width: 100%;
   background-color: #2e2e2e;
   color: #d1d1d1;
   font-size: 1.5rem;
@@ -365,6 +364,10 @@ a {
   .header__help {
     font-size: 2.3rem;
   }
+}
+.header__help:hover {
+  background-color: #fff;
+  color: #2e2e2e;
 }
 
 .instructions {
