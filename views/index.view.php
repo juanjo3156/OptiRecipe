@@ -19,7 +19,7 @@
         </a>
         <a href="#"class="content__option">
             <div>
-                <p>Facturas pendientes</p>
+                <p>Facturas Pendientes</p>
                 <i class="fa-solid fa-file-invoice"></i>
             </div>
             

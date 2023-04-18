@@ -14,8 +14,12 @@
 
     &__grid{
         display: grid;
-        grid-template-columns: repeat(3,1fr);   
-        gap: .6rem;
+        gap: 1rem;
+        grid-template-rows: repeat(4,1fr);
+        @include m.phone { 
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: unset;
+        }
     }
 
     &__option{
@@ -25,30 +29,41 @@
         background-color: v.$black;
         padding: 1rem;
         color: #fff;
-        height: 20rem;
         transition-property: scale;
         transition-duration: .300s;
+        @include m.phone { 
+            height: 20rem;
+        }
         &:hover{
-            // background-color: #d5d5d5;
-            // color: v.$black;
             scale: 1.03;
         }
             p{
                 margin: 0;
                 font-family: v.$secundary_font;
                 font-weight: 700;
-                font-size: 2rem;
-                
+                font-size: 1.2rem;
+                @include m.phone { 
+                    font-size: 1.8rem;
+                }
             }
             
             i{
                 margin-top: 2rem;
-                font-size: 2.5rem;
+                font-size: 2rem;
+                @include m.phone { 
+                    font-size: 2.5rem;
+                }
             }
+        
+        
 
         &:last-of-type{
-            grid-column: 1/4;
-            height: 8rem;
+
+            @include m.phone { 
+                height: 8rem;
+                grid-column: 1/4;
+            }
+            
         }
     }
     
