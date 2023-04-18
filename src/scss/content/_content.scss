@@ -51,14 +51,21 @@
                 margin-top: 2rem;
                 font-size: 2rem;
                 @include m.phone { 
-                    font-size: 2.5rem;
+                    font-size: 2.4rem;
                 }
             }
         
-        
+        &:nth-child(3){
+            p{
+                @include m.phone { 
+                    margin-top: -1.8rem;
+                }
+            }
+            
+        }
 
         &:last-of-type{
-
+            
             @include m.phone { 
                 height: 8rem;
                 grid-column: 1/4;
