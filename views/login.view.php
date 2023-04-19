@@ -1,7 +1,7 @@
 <?php require('templates/header.php'); ?>
 <div class="container">
     <div class="form-login">
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-login__content">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-login__content" method="post">
 
             <h2>Inicio de sesión</h2>
             <i class="fa-solid fa-user"></i>
@@ -19,7 +19,7 @@
                     <input id="pass" type="password" name="password" placeholder="Escriba su contraseña">
                 
             </div>
-            <input type="submit" value="Entrar">
+            <input class="form-login__button" type="submit" value="Entrar">
         </form>
     </div>
 </div>
