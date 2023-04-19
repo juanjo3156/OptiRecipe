@@ -1,17 +1,25 @@
 <?php require('templates/header.php'); ?>
 <div class="container">
     <div class="form-login">
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>">
-            <div class="form-login__content">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-login__content">
+
+            <h2>Inicio de sesión</h2>
+            <i class="fa-solid fa-user"></i>
+
+            <div class="form-login__field">
                 <label for="username">Nombre de usuario:</label>
-                <input id="username" type="text" name="username">
+                
+                    <input id="username" type="text" name="username" placeholder="Escriba su nombre de usuario">
+                
             </div>
             
-            <div class="form-login__content">
+            <div class="form-login__field">
                 <label for="pass">Contraseña:</label>
-                <input id="pass" type="text" name="password">
+               
+                    <input id="pass" type="password" name="password" placeholder="Escriba su contraseña">
+                
             </div>
-            
+            <input type="submit" value="Entrar">
         </form>
     </div>
 </div>

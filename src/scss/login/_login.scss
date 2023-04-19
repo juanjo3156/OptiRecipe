@@ -1,0 +1,74 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.form-login{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+       
+    
+    h2{
+        font-family: v.$principal_font;
+        text-align: center;
+        text-transform: uppercase;
+        color: v.$black;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        
+        width: 100%;
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0, .2);
+        padding: 1rem;
+        @include m.phone { 
+            width: 80%;
+            border-radius: .3rem;
+        }
+        @include m.tablet { 
+            width: 50%;
+        }
+        i{
+            margin: 0 auto 2rem auto;
+            font-size: 6rem;
+            color: v.$black;
+            
+        }
+    }
+    &__field{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: v.$principal_font;
+        color: v.$black;
+        padding-bottom: 1rem;
+        font-size: .8rem;
+        label{
+            margin-bottom: .6rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            @include m.phone { 
+                font-size: 1rem;
+                
+                font-weight: 700;
+            }
+        }
+        input{
+            font-size: .8rem;
+            padding: .5rem;
+            outline: none;
+            @include m.phone { 
+                font-size: 1.2rem;
+                padding: .3rem;
+            }
+
+       
+        }
+        input[type="submit"]{
+            font-size: 2rem;
+        }
+    }
+}
