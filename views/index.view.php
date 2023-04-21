@@ -1,6 +1,6 @@
 <?php include('templates/header.php');?>
-
-    <h2 class="container tittle">Escoge una opción</h2>
+<!-- Sección principal del programa donde se mostrara el menu principal -->
+<h2 class="container tittle">Escoge una opción</h2>
 <div class="container content">
     <div class="content__grid">
         <a href="#"class="content__option">
