@@ -11,8 +11,8 @@
         <div class="form-signup__field">
             <label for="password">Contraseña:</label>
             
-            <input type="text" id="password" name="password" placeholder="Escribe una contraseña">
-            <br>
+            <input class="form-signup__pass"type="text" id="password" name="password" placeholder="Escribe una contraseña">
+            
             <input type="text" id="password" name="password2" placeholder="Repite la contraseña">
             
         </div>
