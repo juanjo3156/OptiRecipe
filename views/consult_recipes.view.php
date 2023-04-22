@@ -1,24 +1,19 @@
 <?php require('templates/header.php'); ?>
-
-        <div class="clients__table container">
-            <table>
-                <thead>
+        <h2 class="tittle">Recetas</h2>
+        <div class="table container">
+            <table class="table__content">
+                <thead class="table__head">
                     <tr>
-                        <th>Clientes</th>
+                        <th class="table__head-element"><h2>Clientes</h2></th>
+                        <th class="table__head-element"><h2>Acciones</h2></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="table__row">
                         <td>Juan José Ruiz Cruz</td>
-                    </tr>
-                    <tr>
-                        <td>Juan José Ruiz Cruz</td>
-                    </tr>
-                    <tr>
-                        <td>Juan José Ruiz Cruz</td>
-                    </tr>
-                    <tr>
-                        <td>Juan José Ruiz Cruz</td>
+                        <td class="table__actions"><a href="#" class="button" >Boton</a>
+                        <a href="#"class="button-red">Boton</a>
+                        <a href="#"class="button-green">Boton</a></td>
                     </tr>
                 </tbody>
             </table>
