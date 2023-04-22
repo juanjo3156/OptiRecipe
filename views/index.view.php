@@ -3,7 +3,7 @@
 <h2 class="container tittle">Escoge una opción</h2>
 <div class="container content">
     <div class="content__grid">
-        <a href="#"class="content__option">
+        <a href="<?php echo RUTA?>consult_recipes.php"class="content__option">
             <div>
                 <p>Consultar Recetas</p>
                 <i class="fa-solid fa-list"></i>
