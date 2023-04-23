@@ -23,7 +23,6 @@
             font-size: 1.5rem;
             @include m.phone { 
             font-size: 2rem;
-                
             }
         }
         th{
@@ -33,7 +32,10 @@
         td{
             padding: 1rem;
             // border-top: 2px solid lighten(v.$black,50%);
-            
+            border-right: 3px solid lighten(v.$black, 60%);
+            &:last-of-type{
+                border: none;
+            }
         }
     }
     
