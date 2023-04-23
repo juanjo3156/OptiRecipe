@@ -28,14 +28,15 @@ a{
 
 .tittle{
     font-size: 4rem;
-    margin-top: 1;
+    margin-top: .5rem;
     margin-bottom: 0;
     text-align: center;
     font-family: v.$principal_font;
 }
 .patient{
     font-size: 2.5rem;
-    background-color: #fff;
+    background-color: v.$gray;
+    color: v.$black;
     padding: 1rem;
     margin-top: 0;
     margin-bottom: 0;
