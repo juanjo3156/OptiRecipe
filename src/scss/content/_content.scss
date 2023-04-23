@@ -1,10 +1,7 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.tittle{
-    font-size: 1.8rem;
-    margin: 1rem auto .4rem auto;
-}
+
 .content{
 
     
@@ -30,47 +27,47 @@
         flex-direction: column;
         justify-content: center;
         background-color: v.$black;
-        padding: 1rem;
+        padding: 1.8rem;
         color: #fff;
         transition-property: scale;
         transition-duration: .300s;
         @include m.phone { 
-            height: 14rem;
+            height: 25rem;
         }
         &:hover{
             scale: 1.03;
         }
-            p{
+        p{
                 margin: 0;
                 font-family: v.$secundary_font;
                 font-weight: 700;
-                font-size: 1.2rem;
-                @include m.phone { 
-                    font-size: 1.4rem;
-                }
-            }
-            
-            i{
-                margin-top: 2rem;
                 font-size: 2rem;
                 @include m.phone { 
-                    font-size: 2rem;
+                    font-size: 2.2rem;
                 }
-            }
+        }
+            
+        i{
+                margin-top: 2rem;
+                font-size: 3rem;
+                @include m.phone { 
+                    font-size: 3rem;
+                }
+        }
         
      
         &:last-of-type{
             
             @include m.phone { 
                 padding: .5rem 0 .5rem 0;
-                height: 6.4rem;
+                height: 13rem;
                 grid-column: 1/4;
 
                 i{
                     margin-top: 2rem;
                     font-size: 1.5rem;
                     @include m.phone { 
-                        font-size: 2rem;
+                        font-size: 3rem;
                     }
                 }
             }
