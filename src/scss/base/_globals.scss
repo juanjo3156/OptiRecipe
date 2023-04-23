@@ -28,10 +28,37 @@ a{
 
 .tittle{
     font-size: 4rem;
-    margin-top: 1rem;
+    margin-top: 1;
     margin-bottom: 0;
     text-align: center;
     font-family: v.$principal_font;
+}
+.patient{
+    font-size: 2.5rem;
+    background-color: #fff;
+    padding: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: v.$principal_font;
+    @include m.phone { 
+        font-size: 2rem;
+    }
+}
+
+.recipe-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    @include m.phone { 
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+        width:90%;
+        max-width: 1000px;
+    }
 }
 
 .button{
@@ -66,5 +93,38 @@ a{
     background-color: v.$green;
     &:hover{
         background-color: lighten(v.$green, 10%);
+    }
+}
+
+.back-button{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$black;
+    color: #e5e5e5;
+    padding: 2rem;
+  
+    max-width: 40%;
+    max-height: 3rem;
+    order: -1;
+    margin-bottom: 1rem;
+    @include m.phone { 
+    margin-bottom: 0; 
+    max-width: 30%;
+    }
+    p{
+        font-size: 1.6rem;
+        font-family: v.$secundary_font;
+        padding-left: 1rem;
+        font-style: oblique;
+        @include m.phone { 
+        font-size: 2rem;
+            
+        }
+    }
+    i{
+        font-size: 2rem;
+
     }
 }
