@@ -5,17 +5,9 @@
     <div class="content__grid">
         <a href="<?php echo RUTA?>consult_clients.php"class="content__option">
             <div>
-                <p>Consultar Recetas</p>
+                <p>Recetas de los pacientes</p>
                 <i class="fa-solid fa-list"></i>
             </div>
-        </a>
-        <a href="#"class="content__option">
-            <div>
-                
-                <p>Nueva Receta</p>
-                <i class="fa-solid fa-sheet-plastic"></i>
-            </div>
-            
         </a>
         <a href="#"class="content__option">
             <div>

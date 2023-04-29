@@ -1,9 +1,13 @@
 <?php require('templates/header.php');?>   
 <div class="recipe-head container ">
     <h2 class="patient">Paciente: Juan José Ruiz Cruz</h2>
-    <a class="back-button"href="<?php echo RUTA?>consult_clients.php">
+    <a class="black-button"href="<?php echo RUTA?>consult_clients.php">
         <i class="fa-solid fa-arrow-left"></i>
         <p>Atrás</p>
+    </a>
+    <a class="black-button"href="<?php echo RUTA?>new_recipe.php">
+        <i class="fa-solid fa-file-circle-plus"></i>
+        <p>Agregar Receta</p>
     </a>
 </div>   
         <div class="table container">

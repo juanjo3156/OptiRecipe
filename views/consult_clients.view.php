@@ -1,8 +1,12 @@
 <?php require('templates/header.php'); ?>
         <div class="recipe-head container">
-            <a class="back-button"href="<?php echo RUTA?>">
+            <a class="black-button"href="<?php echo RUTA?>">
             <i class="fa-solid fa-house-chimney"></i>
             <p>Menu principal</p>
+            </a>
+            <a class="black-button"href="<?php echo RUTA?>new_pacient.php">
+            <i class="fa-solid fa-user-plus"></i>
+            <p>Agregar Paciente</p>
             </a>
             <form class="form-search"action="">
                 <input type="text" name="search" class="form-search__input" placeholder="Buscar...">
