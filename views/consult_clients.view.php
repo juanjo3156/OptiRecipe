@@ -1,6 +1,18 @@
 <?php require('templates/header.php'); ?>
-        <div>
-           <h2 class="tittle">Recetas</h2>
+        <div class="recipe-head container">
+            <a class="back-button"href="<?php echo RUTA?>">
+            <i class="fa-solid fa-house-chimney"></i>
+            <p>Menu principal</p>
+            </a>
+            <form class="form-search"action="">
+                <input type="text" name="search" class="form-search__input" placeholder="Buscar...">
+                <div class="form-search__bar">
+                    <button type="submit" class="form-search__button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+            </form>
         </div>
         <div class="table container">
             <table class="table__content">
