@@ -4,7 +4,6 @@
 .header{
        
     padding-bottom: 1rem;
-    padding-top: 2rem;
     border-bottom: 2px solid #d1d1d1;
     display: flex;
     flex-direction: column;
@@ -18,9 +17,9 @@
     &__title{
         font-family: v.$secundary_font;
         margin-bottom: 2rem;
-        font-size: 6rem;
+        font-size: 5rem;
         @include m.phone { 
-            margin:1.4rem;
+            margin:.4rem;
         }
     }
     &__help{
@@ -30,9 +29,9 @@
         font-size: 2rem;
         padding: 1.4rem;
         margin: 0;
-        border-radius: .2rem;
+        border-radius: .6rem;
         @include m.phone{ 
-        font-size: 4rem;
+
            
         }
         &:hover{
