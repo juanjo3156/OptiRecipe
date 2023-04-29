@@ -17,7 +17,7 @@
         gap: 1rem;
         grid-template-rows: repeat(4,1fr);
         @include m.phone { 
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(2,1fr);
             grid-template-rows: unset;
         }
     }
@@ -62,16 +62,14 @@
                 padding: .5rem 0 .5rem 0;
                 height: 13rem;
                 grid-column: 1/4;
-
-                i{
-                    margin-top: 2rem;
-                    font-size: 1.5rem;
-                    @include m.phone { 
-                        font-size: 3rem;
-                    }
+            }
+            i{
+                margin-top: 2rem;
+                font-size: 1.5rem;
+                @include m.phone { 
+                    font-size: 3rem;
                 }
             }
-            
         }
     }
     
