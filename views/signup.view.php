@@ -1,4 +1,4 @@
-<?php require('templates/header.php');?>
+<?php require('templates/header-login.php');?>
 <div class="container form-signup">
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-signup__content" method="post">
         <h2>Crea tu usuario</h2>
