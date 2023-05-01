@@ -23,6 +23,13 @@
             
         </div>
         <input type="submit" value="Registrar" class="form-signup__button">
+        <?php if($error!=''):?>
+                <div class="error">
+                    <ul>
+                        <?php echo $error?>
+                    </ul>
+                </div>
+            <?php endif;?> 
     </form>
 </div>
 <div class="container center link">
