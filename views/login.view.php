@@ -1,7 +1,7 @@
-<?php require('templates/header.php'); ?>
+<?php require('templates/header-login.php'); ?>
 
     <div class="form-login container">
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-login__content" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" class="form-login__content" method="POST">
 
             <h2>Inicio de sesión</h2>
             <i class="fa-solid fa-user"></i>
@@ -20,5 +20,17 @@
             </div>
             <input class="form-login__button" type="submit" value="Entrar">
         </form>
+        <!-- <?php if($error!=''):?>
+        <div class="error">
+            <ul>
+                <?php echo $error?>
+            </ul>
+        </div>
+    <?php endif;?> -->
+    
+    </div>
+    <div class="container center link">
+        <p>¿No tienes un usuario?</p>
+        <a href="<?php echo RUTA?>signup.php">Regístrate</a>
     </div>
 <?php require('templates/footer.php'); ?>
