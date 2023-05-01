@@ -20,6 +20,10 @@
                 <input id="phone_number" type="number">
             </div>
             <div class="form-recipe__field">
+                <label for="email">Correo electrónico: </label>
+                <input id="email" type="email">
+            </div>
+            <div class="form-recipe__field">
                 
                 <input type="submit" class="form-recipe-button submit-button " value="Agregar">
             </div>
