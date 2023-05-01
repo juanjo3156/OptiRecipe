@@ -19,14 +19,15 @@
                 
             </div>
             <input class="form-login__button" type="submit" value="Entrar">
+            <?php if($error!=''):?>
+                <div class="error">
+                    <ul>
+                        <?php echo $error?>
+                    </ul>
+                </div>
+            <?php endif;?> 
         </form>
-        <!-- <?php if($error!=''):?>
-        <div class="error">
-            <ul>
-                <?php echo $error?>
-            </ul>
-        </div>
-    <?php endif;?> -->
+       
     
     </div>
     <div class="container center link">

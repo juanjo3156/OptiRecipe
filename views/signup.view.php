@@ -1,6 +1,6 @@
 <?php require('templates/header-login.php');?>
 <div class="container form-signup">
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-signup__content" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-signup__content" method="POST">
         <h2>Crea tu usuario</h2>
         <div class="form-signup__field">
             <label for="username">Nombre de usuario:</label>
@@ -25,4 +25,8 @@
         <input type="submit" value="Registrar" class="form-signup__button">
     </form>
 </div>
+<div class="container center link">
+        <p>¿Ya tienes una cuenta?</p>
+        <a href="<?php echo RUTA?>login.php">Iniciar sesión</a>
+    </div>
 <?php require('templates/footer.php');?>
