@@ -22,6 +22,27 @@
             margin:.4rem;
         }
     }
+    &__buttons{
+        display: flex;
+        width: 30%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__log-out{
+        font-family: v.$secundary_font;
+        text-align: center;
+        background-color: v.$black;
+        color: #d1d1d1;
+        font-size: 2rem;
+        padding: 1.4rem;
+        border-radius: .6rem;
+        transition-property: background-color;
+        transition-duration: 300ms;
+        &:hover{
+            background-color: lighten(v.$black,20%);
+            color: #e5e5e5; 
+        }
+    }
     &__help{
         text-align: center;
         background-color: v.$black;
@@ -30,6 +51,8 @@
         padding: 1.4rem;
         margin: 0;
         border-radius: .6rem;
+        transition-property: background-color;
+        transition-duration: 300ms;
         @include m.phone{ 
 
            
@@ -39,5 +62,5 @@
             color: v.$black;
         }
     }
-
+    
 }

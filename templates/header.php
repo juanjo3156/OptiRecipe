@@ -17,8 +17,12 @@
         <a href="<?php echo RUTA?>index.php">
             <h1 class="header__title">OptiRecipe</h1>
         </a>
-
+        <div class="header__buttons">
+        <a class="header__log-out" href="<?php echo RUTA?>log_out.php">Cerrar Sessión</a>
         <a href="<?php echo RUTA?>help.php">
             <h3 class="header__help"><i class="fa-solid fa-question"></i></h3>
         </a>
+        
+        </div>
+        
     </header>
