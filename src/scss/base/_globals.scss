@@ -46,7 +46,30 @@ a{
         font-size: 2rem;
     }
 }
-
+.center{
+   
+    text-align: center;
+}
+.link{
+    margin-top: 3rem;
+    font-size: 1.6rem;
+    font-family: v.$secundary_font;
+    p{
+        display: block;
+        margin-bottom: 3rem;
+    }
+    a{
+        background-color: v.$black;
+      color: #fff;
+      transition-property: font-size;
+      transition-duration: 300ms;
+      padding: 1rem;
+       &:hover{
+        
+        font-size: 1.8rem;
+       }
+    }
+}
 .recipe-head{
     display: flex;
     flex-direction: column;
