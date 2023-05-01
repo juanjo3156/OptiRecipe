@@ -70,6 +70,18 @@ a{
        }
     }
 }
+.error{
+    background-color:#FF8E8E;
+    color: #B92424;
+    font-family: v.$principal_font;
+    font-size: 1.4rem;
+    font-weight: 700;
+    ul{
+        list-style: none;
+        text-align: center;
+        padding: 0;
+    }
+}
 .recipe-head{
     display: flex;
     flex-direction: column;
