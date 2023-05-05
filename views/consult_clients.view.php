@@ -4,7 +4,7 @@
             <i class="fa-solid fa-house-chimney"></i>
             <p>Menu principal</p>
             </a>
-            <a class="black-button"href="<?php echo RUTA?>new_pacient.php">
+            <a class="black-button"href="<?php echo RUTA?>new_patient.php">
             <i class="fa-solid fa-user-plus"></i>
             <p>Agregar Paciente</p>
             </a>
