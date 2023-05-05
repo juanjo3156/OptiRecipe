@@ -30,6 +30,7 @@
                     <th>Eje</th>
                     <th>Alt</th>
                     <th>Add</th>
+                    <th>Dnp</th>
                 </tr>
                 <tr>
                 <th>OD</th>
@@ -39,6 +40,7 @@
                     <td><input type="text" id="eje_od" name="eje_od" ></td>
                     <td><input type="text" id="altura_od" name="altura_od" ></td>
                     <td><input type="text" id="add_od" name="add_od" ></td>
+                    <td><input type="text" id="dnp_od" name="dnp_od" ></td>
                 </tr>
                 <tr>
                 <th>OI</th>
@@ -48,6 +50,7 @@
                     <td><input type="text" id="eje_oi" name="eje_oi" ></td>
                     <td><input type="text" id="altura_oi" name="altura_oi" ></td>
                     <td><input type="text" id="add_oi" name="add_oi" ></td>
+                    <td><input type="text" id="dnp_oi" name="dnp_oi" ></td>
                 </tr>
             </table>
             </div>
@@ -56,14 +59,19 @@
                 <label for="notes">Obvervaciones:</label>
                 <textarea name="" id="notes" cols="35" rows="4"></textarea>
             </div>
+        
             <div class="form-recipe__field">
-                <label for="precio">Precio:</label>
-                <input class="precio"id="precio" type="text" placeholder="precio total">
-            </div>
+                <label for="price">Precio:</label>
+                <div class="price_content">
+                    <label for="">$</label>
+                    <input class="price_input" id="price" type="text" placeholder="precio total">
+                </div>
+            </div> 
             <div class="form-recipe__field">
                 
                 <input type="submit" class="form-recipe-button submit-button " value="Agregar">
             </div>
+            
         </form>
     </div>
 <?php require("templates/footer.php") ?>
