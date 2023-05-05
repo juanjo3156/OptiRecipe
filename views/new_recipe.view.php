@@ -57,6 +57,10 @@
                 <textarea name="" id="notes" cols="35" rows="4"></textarea>
             </div>
             <div class="form-recipe__field">
+                <label for="precio">Precio:</label>
+                <input class="precio"id="precio" type="text" placeholder="precio total">
+            </div>
+            <div class="form-recipe__field">
                 
                 <input type="submit" class="form-recipe-button submit-button " value="Agregar">
             </div>
