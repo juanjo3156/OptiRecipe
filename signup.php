@@ -30,6 +30,23 @@ require('scripts/functions.php');
             if($result != false){
                 $error.='<li>El email ya ha sido utilizado por otro usuario</li>';
             }
+            $password = hash('sha512',$password);
+            $password2 = hash('sha512',$password2);
+            
+            if($password != $password2){
+                $error.='<li>Las contraseñas no coinciden</li>';
+            }
+            if($error == ''){
+                $statement = $connection->prepare("INSERT INTO users (username,email,password) VALUES (:username,:email,:password)");
+    
+                $statement->bindParam(':username',$username);
+                $statement->bindParam(':password',$password);
+                $statement->bindParam(':email',$email);
+                
+                $statement->execute();
+    
+                header('Location:'.RUTA.'login.php');
+            }
         }
     }
 
