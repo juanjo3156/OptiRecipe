@@ -8,7 +8,6 @@ $error = '';
 if($_SERVER['REQUEST_METHOD']=="POST"){
     $username = clean_data(filter_var(strtolower($_POST['username']),FILTER_SANITIZE_STRING));
     $password = hash('sha512', $_POST['password']);
-
     $statement = $connection->prepare('SELECT * FROM users WHERE username = :username AND password = :password ');
     $statement->execute(array(":username"=>$username,":password"=>$password));
     $result = $statement->fetch();

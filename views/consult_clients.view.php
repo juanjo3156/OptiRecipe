@@ -27,14 +27,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($patients as $patient):?>
                     <tr class="table__row">
-                        <td>Juan José Ruiz Cruz</td>
+                        <td><?php echo $patient["name"]?></td>
                         <td class="table__actions">
                             <a href="<?php echo RUTA?>consult_recipe.php" class="button" ><i class="fa-solid fa-eye"></i></a>
                             <a href="#" class="button-green"><i class="fa-solid fa-user-pen"></i></a>
                             <a href="#" class="button-red"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
+                    <?php endforeach;?>
                 </tbody>
             </table>
         </div>
