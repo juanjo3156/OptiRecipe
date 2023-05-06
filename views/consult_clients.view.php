@@ -33,7 +33,7 @@
                         <td class="table__actions">
                             <a href="<?php echo RUTA?>consult_recipe.php" class="button" ><i class="fa-solid fa-eye"></i></a>
                             <a href="#" class="button-green"><i class="fa-solid fa-user-pen"></i></a>
-                            <a href="#" class="button-red"><i class="fa-solid fa-trash"></i></a>
+                            <a href="<?php echo RUTA?>consult_clients.php?txtID=<?php echo $patient['patient_id']?>" class="button-red"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php endforeach;?>
