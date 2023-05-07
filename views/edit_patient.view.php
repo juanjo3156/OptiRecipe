@@ -24,16 +24,16 @@
                 <label for="email">Correo electrónico: </label>
                 <input id="email" type="email" name="email" value="<?php echo $patient_info["email"]?>">
             </div>
-            <!-- <?php if($error!=''):?>
+            <?php if($error!=''):?>
                 <div class="error">
                     <ul>
                         <?php echo $error?>
                     </ul>
                 </div>
             <?php endif;?> 
-            -->
+           
             <div class="form-recipe__field">
-                
+                <input type="hidden" name="patient_id" value="<?php echo $patient_info["patient_id"]; ?>">
                 <input type="submit" class="submit-button" value="Actualizar paciente">
                 <a href="<?php echo RUTA?>consult_clients.php" class="cancel_button" value="Cancelar">Cancelar</a>
 
