@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <title>OptiRecipe - Inicio</title>
     <script src="https://kit.fontawesome.com/9324a5a112.js" crossorigin="anonymous"></script>
+    <script src="http://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header class ="header container">
