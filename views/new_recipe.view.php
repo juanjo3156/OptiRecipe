@@ -1,6 +1,6 @@
 <?php require("templates/header.php");?>
 
-<div class="container new_pacient_container">
+<div class="container form_new_container">
     <h2>Nueva Receta</h2>
     <i class="fa-solid fa-file-circle-plus"></i>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-recipe" method="post">
@@ -64,12 +64,6 @@
                 <input class="price_input" id="price" name="price" type="text" placeholder="precio total">
             </div>
         </div> 
-        <div class="form-recipe__field">
-            <input type="hidden" name="txtID" value="<?php echo $txtID; ?>">
-            <input type="submit" class="submit-button" value="Agregar">
-            
-            <a href="<?php echo RUTA?>consult_recipe.php?txtID=<?php echo $patient_info["patient_id"]?>" class="cancel_button" value="Cancelar">Cancelar</a>
-        </div>
         <?php if($error!=''):?>
                 <div class="error">
                     <ul>
@@ -77,6 +71,14 @@
                     </ul>
                 </div>
             <?php endif;?> 
+        <div class="form-recipe__field">
+            <input type="hidden" name="txtID" value="<?php echo $txtID; ?>">
+            <input type="submit" class="submit-button" value="Agregar">
+            
+            <a href="<?php echo RUTA?>consult_recipe.php?txtID=<?php echo $patient_info["patient_id"]?>" class="cancel_button" value="Cancelar">Cancelar</a>
+            
+        </div>
+        
     </form>
 </div>
 <?php require("templates/footer.php") ?>

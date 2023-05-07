@@ -1,5 +1,5 @@
 <?php require("templates/header.php");?>
-<div class="container new_pacient_container">
+<div class="container form_new_container">
         <h2>Editar Paciente</h2>
         <i class="fa-solid fa-user-pen"></i>
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-recipe" method="post">

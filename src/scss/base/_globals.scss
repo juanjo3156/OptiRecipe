@@ -229,3 +229,11 @@ a{
         background-color: lighten(#B92424, 20%);
     }
 }
+.save_button{
+    @extend .submit-button;
+    background-color: v.$green;
+    &:hover{
+        cursor: pointer;
+        background-color: lighten(v.$green, 10%);
+    }
+}

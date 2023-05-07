@@ -15,10 +15,10 @@
                 <i class="fa-solid fa-file-invoice"></i>
             </div>
             
-        </a>
-        <a href="#"class="content__option">
+        </a> 
+        <a href="<?php echo RUTA?>optic_configurations.php"class="content__option">
             <div>
-                <p>Configuraciones</p>
+                <p>Configuraciones de la óptica</p>
                 <i class="fa-solid fa-sliders"></i>
                 
             </div>
