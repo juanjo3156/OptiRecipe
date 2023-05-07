@@ -1,5 +1,7 @@
 <?php
+session_start();
 require("config/config.php");
+require("scripts/set_session.php");
 require("scripts/db.php");
 $error = '';
 if($_SERVER['REQUEST_METHOD'] == "POST"){

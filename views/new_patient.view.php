@@ -34,7 +34,9 @@
            
             <div class="form-recipe__field">
                 
-                <input type="submit" class="form-recipe-button submit-button " value="Agregar">
+                <input type="submit" class="submit-button " value="Agregar">
+                <a href="<?php echo RUTA?>consult_clients.php" class="cancel_button" value="Cancelar">Cancelar</a>
+
             </div>
         </form>
     </div>
