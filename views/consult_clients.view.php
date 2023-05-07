@@ -33,9 +33,9 @@
                         <td><?php echo $patient["name"]?></td>
                         <td class="center"><?php echo $patient["phone"]?></td>
                         <td class="table__actions">
-                            <a href="<?php echo RUTA?>consult_recipe.php" class="button" ><i class="fa-solid fa-eye"></i></a>
+                            <a href="<?php echo RUTA?>consult_recipe.php?txtID=<?php echo $patient["patient_id"]?>" class="button" ><i class="fa-solid fa-eye"></i></a>
                             <a href="<?php echo RUTA?>edit_patient.php?txtID=<?php echo $patient["patient_id"]?>" class="button-green"><i class="fa-solid fa-user-pen"></i></a>
-                            <a href="<?php echo RUTA?>consult_clients.php?txtID=<?php echo $patient['patient_id']?>" class="button-red"><i class="fa-solid fa-trash"></i></a>
+                            <a href="<?php echo RUTA?>delete_patient.php?txtID=<?php echo $patient['patient_id']?>" class="button-red"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php endforeach;?>
