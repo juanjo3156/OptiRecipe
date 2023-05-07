@@ -68,8 +68,7 @@
                 </div>
             </div> 
             <div class="form-recipe__field">
-                
-                <input type="submit" class="form-recipe-button submit-button " value="Agregar">
+                <input type="submit" class="submit-button " value="Agregar">
             </div>
             
         </form>
