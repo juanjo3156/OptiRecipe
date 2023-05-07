@@ -202,7 +202,9 @@ a{
     }
 }
 .submit-button{
-        
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     font-family: v.$principal_font;
     font-weight: 700;
     padding: 1.2rem;
@@ -210,12 +212,20 @@ a{
     text-transform: uppercase;
     color: #e1e1e1;
     background-color: v.$black;
-    @include m.phone { 
-        margin: 0 auto;
-        width: 100%;
-    }
+    
+    flex-grow: 2;
     &:hover{
         cursor: pointer;
-        background-color: lighten(v.$black, 10%);
+        background-color: lighten(v.$black, 20%);
+    }
+}
+.cancel_button{
+    @extend .submit-button;
+    background-color: #B92424;
+    flex-grow: 1;
+    border: 3px outset #B92424;
+    &:hover{
+        cursor: pointer;
+        background-color: lighten(#B92424, 20%);
     }
 }
