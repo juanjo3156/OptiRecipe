@@ -23,6 +23,7 @@
                 <thead class="table__head">
                     <tr>
                         <th class="table__head-element"><h2>Paciente</h2></th>
+                        <th class="table__head-element"><h2>Tel</h2></th>
                         <th class="table__head-element"><h2>Acciones</h2></th>
                     </tr>
                 </thead>
@@ -30,9 +31,10 @@
                     <?php foreach ($patients as $patient):?>
                     <tr class="table__row">
                         <td><?php echo $patient["name"]?></td>
+                        <td class="center"><?php echo $patient["phone"]?></td>
                         <td class="table__actions">
                             <a href="<?php echo RUTA?>consult_recipe.php" class="button" ><i class="fa-solid fa-eye"></i></a>
-                            <a href="#" class="button-green"><i class="fa-solid fa-user-pen"></i></a>
+                            <a href="<?php echo RUTA?>edit_patient.php?txtID=<?php echo $patient["patient_id"]?>" class="button-green"><i class="fa-solid fa-user-pen"></i></a>
                             <a href="<?php echo RUTA?>consult_clients.php?txtID=<?php echo $patient['patient_id']?>" class="button-red"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
