@@ -44,11 +44,11 @@
                         $error .= "<li>El precio y la fecha de creación son obligatorios</li>";
                     } else {
                         $sqlFolio = "SELECT LPAD(COUNT(*) + 1, 4, '0') AS folio FROM prescriptions";
-                        $stmtFolio = $connection->query($sqlFolio);
+                        $stmtFolio = $connection->prepare($sqlFolio);
+                        $stmtFolio->execute();
                         $folioRow = $stmtFolio->fetch(PDO::FETCH_ASSOC);
                         $folio = 'RE' . $folioRow['folio'];
-        
-                        
+
                         $sqlInsert = "INSERT INTO prescriptions (patient_id, folio, date,glass_type, sphere_left, sphere_right, cylinder_left, cylinder_right, axis_left, axis_right, addition_left, addition_right, dnp_left, dnp_right, height_left, height_right, notes, price)
                         VALUES (:patient_id, :folio, :date,:glass_type, :sphere_left, :sphere_right, :cylinder_left, :cylinder_right, :axis_left, :axis_right, :addition_left, :addition_right, :dnp_left, :dnp_right, :height_left, :height_right, :notes, :price)";
                         
