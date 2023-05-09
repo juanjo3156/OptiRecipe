@@ -19,6 +19,8 @@
             </form>
         </div>
         <div class="table container">
+        <?php if(count($patients) > 0): // Verificar si se encontraron resultados ?>
+           
             <table class="table__content">
                 <thead class="table__head">
                     <tr>
@@ -39,8 +41,17 @@
                         </td>
                     </tr>
                     <?php endforeach;?>
+                <?php else: // Si no hay resultados, mostrar mensaje ?>
+                    <div class="center search-error">
+                        <p>No se encontraron pacientes con el término:"<?php echo $searchQuery; ?>"</p>
+                        <a class="submit-button" href="<?php echo RUTA?>consult_clients.php">Volver</a>
+                    </div>
+                   
+                <?php endif; ?>
                 </tbody>
+                
             </table>
-        </div>
+            
+            </div>
 
 <?php require('templates/footer.php'); ?>
