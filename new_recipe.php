@@ -14,7 +14,6 @@
     }
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             if (isset($_POST)) {
-                $txtID = $_SESSION["txtID"];
                 if (isset($_POST['patient_id'])) {
                     $patient_id = $_SESSION["txtID"];
                     $statement = $connection->prepare("SELECT * FROM patients WHERE patient_id = :patient_id LIMIT 1");

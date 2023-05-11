@@ -5,17 +5,24 @@ session_start();
     require("scripts/set_session.php");
     require("scripts/db.php");
     $error = "";
-    if(isset($_GET['txtID'])){
-        $patient_id = $_GET['txtID'];
+    $txtID = ""; // Variable para almacenar el valor de txtID
+
+    if (isset($_GET['txtID'])) {
+        $txtID = $_GET['txtID'];
+        $_SESSION["txtID"] = $txtID;
+    } elseif (isset($_SESSION['txtID'])) {
+        $txtID = $_SESSION['txtID'];
+    }
+
+    if (!empty($txtID)) {
         $statement = $connection->prepare("SELECT * FROM patients WHERE patient_id = :patient_id LIMIT 1");
-        $statement->bindParam(":patient_id",$patient_id);
+        $statement->bindParam(":patient_id", $txtID);
         $statement->execute();
         $patient_info = $statement->fetch();
     }
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if(isset($_POST)){
-            $patient_id = $_POST['patient_id'];
             $name = $_POST['name'];     
             $date_of_birth = $_POST['date_of_birth'];     
             $address = $_POST['address'];     
@@ -26,7 +33,7 @@ session_start();
                 $error.= "<li>El nombre, la fecha de nacimiento y el numero de teléfono son obligatorios</li>";
             }else{
                 $statement = $connection->prepare("UPDATE patients SET name=:name,date_of_birth =:date_of_birth,email=:email,phone=:phone,address = :address WHERE patient_id = :patient_id");
-                $statement->bindParam(":patient_id",$patient_id);
+                $statement->bindParam(":patient_id",$txtID);
                 $statement->bindParam(":name",$name);
                 $statement->bindParam(":email",$email);
                 $statement->bindParam(":phone",$phone);

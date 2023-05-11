@@ -6,6 +6,7 @@
             <div class="form-recipe__field">
                 <label for="pacient_name">*Nombre: </label>
                 <input id="pacient__name" type="text" name="name" value="<?php echo $patient_info["name"]?>">
+                <input type="hidden" name="txtID" value="<?php echo $_SESSION['txtID']; ?>">
             </div>
             <div class="form-recipe__field">
                 <label for="phone">*Numero de teléfono: </label>
@@ -33,7 +34,6 @@
             <?php endif;?> 
            
             <div class="form-recipe__field">
-                <input type="hidden" name="patient_id" value="<?php echo $patient_info["patient_id"]; ?>">
                 <input type="submit" class="submit-button" value="Actualizar paciente">
                 <a href="<?php echo RUTA?>consult_clients.php" class="cancel_button" value="Cancelar">Cancelar</a>
 
