@@ -21,12 +21,13 @@
                 </thead>
                 <tbody>
                     <?php foreach($recipes as $recipe): ?>
+                        <?php $prescriptionDate = date('d/m/Y', strtotime($recipe['date']));?>
                         <tr class="table__row">
                         <td><?php echo $recipe["folio"]?></td>
-                        <td>10/01/2023</td>
+                        <td class="center"><?php echo $prescriptionDate?></td>
                         <td class="table__actions">
                             <a href="#" class="button" ><i class="fa-solid fa-file-pdf"></i></i></a>
-                            <a href="#" class="button-green"><i class="fa-solid fa-pen-to-square"></i></i></a>
+                            <a href="<?php echo RUTA?>edit_recipe.php?patient_id=<?php echo $patient_info["patient_id"]?>&recipe_id=<?php echo $recipe["prescription_id"]?>"" class="button-green"><i class="fa-solid fa-pen-to-square"></i></i></a>
                             <a href="<?php echo RUTA?>delete_recipe.php?patient_id=<?php echo $patient_info["patient_id"]?>&recipe_id=<?php echo $recipe["prescription_id"]?>" class="button-red"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
