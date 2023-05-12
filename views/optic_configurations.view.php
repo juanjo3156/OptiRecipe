@@ -25,7 +25,7 @@
             </div>
             <div class="form-recipe__field">
                 
-            <a href="<?php echo RUTA?>restore_config.php" class="submit-button" type="submit">Restaurar por defecto</a>
+            <a href="#" class="submit-button" onclick="restoreDefaultValues()">Restaurar por defecto</a>
                 
             </div>
             
@@ -34,4 +34,5 @@
        
     
     </div>
+    <script src="scripts/restore_default.js"></script>
 <?php require("templates/footer.php"); ?>
