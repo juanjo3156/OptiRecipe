@@ -54,7 +54,7 @@
             </table>
             </div>
             <div class="form-recipe__field">
-            <label for="notes">Observaciones:</label>
+            <label for="notes">Diagnostico:</label>
             <textarea name="notes" id="notes" cols="35" rows="4"></textarea>
         </div>
         <div class="form-recipe__field">
