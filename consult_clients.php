@@ -5,13 +5,13 @@
 
     if(isset($_GET['search'])){
         $searchQuery = $_GET['search'];
-        $statement = $connection->prepare("SELECT * FROM patients WHERE name LIKE :searchQuery");
+        $statement = $connection->prepare("SELECT * FROM patients WHERE name LIKE :searchQuery ORDER BY name ASC");
         $searchParam = '%' . $searchQuery . '%';
         $statement->bindParam(":searchQuery",$searchParam);
         $statement->execute();
         $patients = $statement->fetchAll(PDO::FETCH_ASSOC);
     }else{
-        $statement = $connection->prepare("SELECT * FROM patients");
+        $statement = $connection->prepare("SELECT * FROM patients ORDER BY name ASC");
         $statement->execute();
         $patients=$statement->fetchAll(PDO::FETCH_ASSOC);
     }
