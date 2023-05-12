@@ -10,8 +10,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $date_of_birth = $_POST['date_of_birth'];     
         $address = $_POST['address'];     
         $phone = $_POST['phone'];     
-        $email = $_POST['email'];
-
+        $email = strtolower($_POST['email']);
+        
         if(empty($name)||empty($date_of_birth)||empty($phone)){
             $error.= "<li>El nombre, la fecha de nacimiento y el numero de teléfono son obligatorios</li>";
         }else{
