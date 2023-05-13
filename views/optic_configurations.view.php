@@ -9,6 +9,10 @@
                 <label for="enterprise_name">Nombre de la empresa:</label>
                 <input id="enterprise_name" type="text" name="enterprise_name" value="<?php echo $result["enterprise_name"]?>">
             </div>
+            <div class="form-recipe__field">
+                <label for="optometrist">Optometrista:</label>
+                <input id="optometrist" type="text" name="optometrist" value="<?php echo $result["optometrist"]?>">
+            </div>
             
             <div class="form-recipe__field">
                 <label for="address">Dirección:</label>

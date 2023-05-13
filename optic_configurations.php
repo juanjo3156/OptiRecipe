@@ -7,11 +7,12 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Obtener los nuevos datos del formulario
         $newName = $_POST['enterprise_name'];
+        $newOptometrist = $_POST['optometrist'];
         $newAddress = $_POST['address'];
         $newPhone = $_POST['phone_number'];
       
         // Actualizar los datos en la base de datos
-        $statement = $connection->prepare( "UPDATE optics_configuration SET enterprise_name='$newName', address='$newAddress', phone_number='$newPhone'");
+        $statement = $connection->prepare( "UPDATE optics_configuration SET enterprise_name='$newName', address='$newAddress', phone_number='$newPhone',optometrist = '$newOptometrist'");
         $statement->execute();
         header("Location:".RUTA);
       }

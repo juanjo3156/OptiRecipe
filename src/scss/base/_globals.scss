@@ -46,6 +46,9 @@ a{
         font-size: 2rem;
     }
 }
+.right-align{
+    text-align: right;
+}
 .center{
    
     text-align: center;
@@ -89,17 +92,12 @@ a{
 }
 .recipe-head{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
-    @include m.phone { 
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1rem;
-        width:90%;
-        max-width: 1000px;
-    }
+    margin-top: 1rem;
+    width:90%;
+    max-width: 1000px;
 }
 
 .button{
