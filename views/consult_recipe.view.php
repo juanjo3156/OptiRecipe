@@ -26,6 +26,7 @@
                     <tr>
                         <th class="table__head-element"><h2>Folio</h2></th>
                         <th class="table__head-element"><h2>Fecha</h2></th>
+                        <th class="table__head-element"><h2>Tipo de mica</h2></th>
                         <th class="table__head-element"><h2>Acciones</h2></th>
                     </tr>
                 </thead>
@@ -35,6 +36,8 @@
                         <tr class="table__row">
                         <td><?php echo $recipe["folio"]?></td>
                         <td class="center"><?php echo $prescriptionDate?></td>
+                        <td class="center"><?php echo $recipe["glass_type"]?></td>
+
                         <td class="table__actions">
                             <a href="<?php echo RUTA?>scripts/generate_pdf.php?patient_id=<?php echo $patient_info["patient_id"]?>&recipe_id=<?php echo $recipe["prescription_id"]?>" class="button"  target="_blank"><i class="fa-solid fa-file-pdf"></i></i></a>
                             <a href="<?php echo RUTA?>edit_recipe.php?patient_id=<?php echo $patient_info["patient_id"]?>&recipe_id=<?php echo $recipe["prescription_id"]?>" class="button-green"><i class="fa-solid fa-pen-to-square"></i></i></a>
