@@ -24,6 +24,7 @@
                     if($patient){
                     $date = $_POST['date'];
                     $glass_type = $_POST['glass_type'];
+                    $age = $_POST['age'];
                     $sphereLeft = $_POST['sphere_left'];
                     $sphereRight = $_POST['sphere_right'];
                     $cylinderLeft = $_POST['cylinder_left'];
@@ -37,10 +38,14 @@
                     $heightLeft = $_POST['height_left'];
                     $heightRight = $_POST['height_right'];
                     $notes = $_POST['notes'];
+                    $product_description = $_POST['product_description'];
                     $price = $_POST['price'];
-        
+                    
                     if (empty($price) || empty($date) || $glass_type == "") {
                         $error .= "<li>El precio y la fecha de creación son obligatorios</li>";
+                    }
+                    if($age > 200 || $age < 1){
+                        $error.= "<li>Un humano no puede tener más de 200 años o menos de 1</li>";
                     } else {
                         $sqlCounter = "SELECT current_value FROM recipe_counter LIMIT 1";
                             $stmtCounter = $connection->prepare($sqlCounter);
@@ -76,13 +81,15 @@
                             $stmtUpdateCounter->bindParam(':new_value', $newCounterValue);
                             $stmtUpdateCounter->execute();
 
-                            $sqlInsert = "INSERT INTO prescriptions (patient_id,folio,date,glass_type, sphere_left, sphere_right, cylinder_left, cylinder_right, axis_left, axis_right, addition_left, addition_right, dnp_left, dnp_right, height_left, height_right, notes, price)
-                            VALUES (:patient_id,:folio,:date,:glass_type, :sphere_left, :sphere_right, :cylinder_left, :cylinder_right, :axis_left, :axis_right, :addition_left, :addition_right, :dnp_left, :dnp_right, :height_left, :height_right, :notes, :price)";
+                            $sqlInsert = "INSERT INTO prescriptions (patient_id,folio,date,age,glass_type, sphere_left, sphere_right, cylinder_left, cylinder_right, axis_left, axis_right, addition_left, addition_right, dnp_left, dnp_right, height_left, height_right, notes,product_description,price)
+                            VALUES (:patient_id,:folio,:date,:age,:glass_type, :sphere_left, :sphere_right, :cylinder_left, :cylinder_right, :axis_left, :axis_right, :addition_left, :addition_right, :dnp_left, :dnp_right, :height_left, :height_right, :notes,:product_description, :price)";
                             
                             
                             $stmt = $connection->prepare($sqlInsert);
                             $stmt->bindParam(':patient_id', $patient_id);
                             $stmt->bindParam(':date', $date);
+                            $stmt->bindParam(':age', $age);
+                            $stmt->bindParam(':product_description', $product_description);
                             $stmt->bindParam(':folio', $folio);
                             $stmt->bindParam(':glass_type', $glass_type);
                             $stmt->bindParam(':sphere_left', $sphereLeft);

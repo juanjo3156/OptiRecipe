@@ -45,9 +45,6 @@ if(isset($_GET["patient_id"]) && isset($_GET["recipe_id"])){
             
         <div class="recipe__header">
             <h2 class="tittle"><?php echo $enterprise_info["enterprise_name"]?></h2>
-            <!-- <i class="fa-solid fa-glasses"></i> -->
-            
-            
         </div>
         <div class="recipe__enterprise-info">
                 <p>Optometrista: <?php echo $enterprise_info["optometrist"]?></p>
@@ -58,6 +55,11 @@ if(isset($_GET["patient_id"]) && isset($_GET["recipe_id"])){
         <div class="recipe__patient-info">
             <p>Paciente: <?php echo $patient_info["name"]?></p>
             <?php $birthDate = date('d/m/Y', strtotime($patient_info['date_of_birth']));?>
+            <?php if($recipe_info["age"]>1):?>
+            <p>Edad: <?php echo $recipe_info["age"]?> años</p>
+            <?php else:?>
+            <p>Edad: <?php echo $recipe_info["age"]?> año</p>
+            <?php endif;?>
 
             <p>Fecha de nacimiento: <?php echo $birthDate?></p>
             <p>Teléfono: <?php echo $patient_info["phone"]?></p>
@@ -106,6 +108,9 @@ if(isset($_GET["patient_id"]) && isset($_GET["recipe_id"])){
                 <div>
                     <h2>Observaciones:</h2><p><?php echo $recipe_info["notes"]?></p>
                 </div>
+                <div>
+                    <h2>Descripción del producto:</h2><p><?php echo $recipe_info["product_description"]?></p>
+                </div>
                 
             </div>
             <div class="recipe__price">
@@ -120,8 +125,12 @@ if(isset($_GET["patient_id"]) && isset($_GET["recipe_id"])){
         </div>
         
         <div class="recipe__footer">
+            
+           
+            <p class="firm left-align ">Firma del Optometrista:_____________________</p>
             <p class="right-align">Receta optometrica generada por Opti-Recipe</p>
         </div>
+        
     </div>
     
 </body>

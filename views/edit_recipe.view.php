@@ -8,7 +8,11 @@
             <input disabled id="pacient__name" type="text" value="<?php echo $patient_info["name"]?>">
         </div>
         <div class="form-recipe__field">
-            <label for="creation_date">Fecha:</label>
+            <label for="age">Edad:</label>
+            <input name ="age" class="form-recipe__age" id="age" type="number" value="<?php echo $recipe_info["age"] ?>">
+        </div>
+        <div class="form-recipe__field">
+            <label for="creation_date">Fecha de creación:</label>
             <input id="creation_date" type="date" name="date" value="<?php echo $recipe_info["date"]?>">
         </div>
         <div class="form-recipe__field">
@@ -52,9 +56,13 @@
             </table>
             </div>
             <div class="form-recipe__field">
-            <label for="notes">Diagnostico:</label>
+            <label for="notes">Observaciones:</label>
             <textarea name="notes" id="notes" cols="35" rows="4" ><?php echo $recipe_info["notes"]?></textarea>
         </div>
+        <div class="form-recipe__field">
+            <label for="product_description">Descripción del producto:</label>
+            <textarea name="product_description" id="product_description"  rows="4"cols="30"><?php echo $recipe_info["product_description"] ?></textarea>
+            </div>
         <div class="form-recipe__field">
             <label for="price">Precio:</label>
             <div class="price_content">

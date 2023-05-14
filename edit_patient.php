@@ -3,6 +3,8 @@ session_start();
 
     require("config/config.php");
     require("scripts/set_session.php");
+require("scripts/functions.php");
+
     require("scripts/db.php");
     $error = "";
     $txtID = ""; // Variable para almacenar el valor de txtID
@@ -23,14 +25,14 @@ session_start();
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if(isset($_POST)){
-            $name = $_POST['name'];     
+            $name = clean_data($_POST['name']);     
             $date_of_birth = $_POST['date_of_birth'];     
-            $address = $_POST['address'];     
-            $phone = $_POST['phone'];     
-            $email = $_POST['email'];
-            $email = strtolower($_POST['email']);
-            if(empty($name)||empty($date_of_birth)||empty($phone)){
-                $error.= "<li>El nombre, la fecha de nacimiento y el numero de teléfono son obligatorios</li>";
+            $address = clean_data($_POST['address']);     
+            $phone = clean_data($_POST['phone']);     
+            $email = clean_data(strtolower( $_POST['email']));
+            
+            if(empty($name)){
+                $error.= "<li>El nombre del paciente es obligatorio</li>";
             }else{
                 $statement = $connection->prepare("UPDATE patients SET name=:name,date_of_birth =:date_of_birth,email=:email,phone=:phone,address = :address WHERE patient_id = :patient_id");
                 $statement->bindParam(":patient_id",$txtID);

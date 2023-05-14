@@ -30,6 +30,7 @@
         if(isset($_POST)){
             $date = $_POST["date"];
             $glass_type = $_POST["glass_type"];
+            $age = $_POST['age'];
             $sphere_right = $_POST["sphere_right"];
             $sphere_left = $_POST["sphere_left"];
             $cylinder_right = $_POST["cylinder_right"];
@@ -44,14 +45,18 @@
             $dnp_left = $_POST["dnp_left"];
             $notes = $_POST["notes"];
             $price = $_POST["price"];
-
+            $product_description = $_POST['product_description'];
             if(empty($date)||empty($price)){
                 $error.= "<li>El nombre, la fecha de nacimiento y el numero de teléfono son obligatorios</li>";
+            }if($age > 200 || $age < 1){
+                $error.= "<li>Un humano no puede tener más de 200 años o menos de 1</li>";
             }else{
-                $statement = $connection->prepare("UPDATE prescriptions SET date=:date, glass_type=:glass_type,sphere_right = :sphere_right,sphere_left = :sphere_left,cylinder_right =:cylinder_right,cylinder_left = :cylinder_left,axis_right = :axis_right, axis_left = :axis_left, height_right = :height_right,height_left = :height_left,addition_right=:addition_right,addition_left = :addition_left,dnp_right = :dnp_right,dnp_left = :dnp_left, notes = :notes, price = :price WHERE patient_id = :patient_id AND prescription_id = :prescription_id");
+                $statement = $connection->prepare("UPDATE prescriptions SET date=:date, age =:age, glass_type=:glass_type,sphere_right = :sphere_right,sphere_left = :sphere_left,cylinder_right =:cylinder_right,cylinder_left = :cylinder_left,axis_right = :axis_right, axis_left = :axis_left, height_right = :height_right,height_left = :height_left,addition_right=:addition_right,addition_left = :addition_left,dnp_right = :dnp_right,dnp_left = :dnp_left, notes = :notes, price = :price ,product_description=:product_description WHERE patient_id = :patient_id AND prescription_id = :prescription_id");
                 $statement->bindParam(":patient_id",$patient_id);
                 $statement->bindParam(":prescription_id",$recipe_id);
                 $statement->bindParam(':date', $date);
+                $statement->bindParam(':age', $age);
+                $statement->bindParam(':product_description', $product_description);
                 $statement->bindParam(':glass_type', $glass_type);
                 $statement->bindParam(':sphere_left', $sphere_left);
                 $statement->bindParam(':sphere_right', $sphere_right);

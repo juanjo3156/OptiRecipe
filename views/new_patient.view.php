@@ -8,12 +8,12 @@
                 <input id="pacient__name" type="text" name="name">
             </div>
             <div class="form-recipe__field">
-                <label for="phone">*Numero de teléfono: </label>
+                <label for="phone">Numero de teléfono: </label>
                 <input id="phone" type="text" name="phone">
             </div>
             
             <div class="form-recipe__field">
-                <label for="date_of_birth">*Fecha de nacimiento: </label>
+                <label for="date_of_birth">Fecha de nacimiento: </label>
                 <input id="date_of_birth" type="date" name="date_of_birth">
             </div>
             <div class="form-recipe__field">

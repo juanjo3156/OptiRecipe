@@ -15,23 +15,25 @@
         font-size: 1.7rem;
         margin-bottom: 1.7rem;
     }
+    
+    
     &__date{
         margin-left: 19rem;
     }
     &__header{
        
-        padding: 2rem 0;
+        padding: 1rem 0;
         i{
             font-size: 5rem;
         }
         h2{
             text-align: left;
             margin: 0;
-            font-size: 5rem;
+            font-size: 4rem;
         }
     }
     &__enterprise-info{
-        padding: 2rem 0;
+        padding: 1rem 0;
         p{
             
             font-size: 1.5rem;
@@ -60,7 +62,7 @@
         // align-items: center;
         border-top: 2px dashed v.$black;
         border-bottom: 2px dashed v.$black;
-        padding: 2rem 0;
+        padding: 1rem 0;
 
         h2{
             font-size: 1.5rem;
@@ -86,7 +88,7 @@
             p{
                 display: inline-block;
                 margin:1rem;
-                border-bottom: 2px solid v.$black;
+                // border-bottom: 2px solid v.$black;
 
             }
         }
@@ -106,7 +108,7 @@
         
     
     &__table{
-        margin: 2rem auto;
+        margin: 1rem auto;
         font-size: 1.8rem;
         padding: 1rem;
         border-collapse: collapse;
@@ -133,5 +135,9 @@
             font-size: 1.2rem;
             margin: 1rem 0;
         }
+    }
+    .firm{
+        font-size: 1.5rem;
+        margin: 2rem 0;
     }
 }

@@ -10,7 +10,13 @@
             <input type="hidden" name="patient_id" value="<?php echo $patient_info['patient_id']; ?>">
         </div>
         <div class="form-recipe__field">
-            <label for="creation_date">Fecha:</label>
+            <label for="age">Edad:</label>
+            <input name ="age" class="form-recipe__age" id="age" type="number">
+    
+        </div>
+        
+        <div class="form-recipe__field">
+            <label for="creation_date">Fecha de creación:</label>
             <input id="creation_date" type="date" name="date">
         </div>
         <div class="form-recipe__field">
@@ -54,9 +60,15 @@
             </table>
             </div>
             <div class="form-recipe__field">
-            <label for="notes">Diagnostico:</label>
+            <label for="notes">Observaciones:</label>
             <textarea name="notes" id="notes" cols="35" rows="4"></textarea>
-        </div>
+            
+            </div>
+            <div>
+            <div class="form-recipe__field">
+            <label for="product_description">Descripción del producto:</label>
+            <textarea name="product_description" id="product_description"  rows="4"cols="30"></textarea>
+            </div>
         <div class="form-recipe__field">
             <label for="price">Precio:</label>
             <div class="price_content">
