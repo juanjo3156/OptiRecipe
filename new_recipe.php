@@ -42,56 +42,85 @@
                     if (empty($price) || empty($date) || $glass_type == "") {
                         $error .= "<li>El precio y la fecha de creación son obligatorios</li>";
                     } else {
-                        $sqlFolio = "SELECT LPAD(COUNT(*) + 1, 4, '0') AS folio FROM prescriptions";
-                        $stmtFolio = $connection->prepare($sqlFolio);
-                        $stmtFolio->execute();
-                        $folioRow = $stmtFolio->fetch(PDO::FETCH_ASSOC);
-                        $folio = 'RE' . $folioRow['folio'];
+                        $sqlCounter = "SELECT current_value FROM recipe_counter LIMIT 1";
+                            $stmtCounter = $connection->prepare($sqlCounter);
+                            $stmtCounter->execute();
+                            $counterRow = $stmtCounter->fetch(PDO::FETCH_ASSOC);
 
-                        $sqlInsert = "INSERT INTO prescriptions (patient_id, folio, date,glass_type, sphere_left, sphere_right, cylinder_left, cylinder_right, axis_left, axis_right, addition_left, addition_right, dnp_left, dnp_right, height_left, height_right, notes, price)
-                        VALUES (:patient_id, :folio, :date,:glass_type, :sphere_left, :sphere_right, :cylinder_left, :cylinder_right, :axis_left, :axis_right, :addition_left, :addition_right, :dnp_left, :dnp_right, :height_left, :height_right, :notes, :price)";
-                        
-                        
-                        $stmt = $connection->prepare($sqlInsert);
-                        $stmt->bindParam(':patient_id', $patient_id);
-                        $stmt->bindParam(':folio', $folio);
-                        $stmt->bindParam(':date', $date);
-                        $stmt->bindParam(':glass_type', $glass_type);
-                        $stmt->bindParam(':sphere_left', $sphereLeft);
-                        $stmt->bindParam(':sphere_right', $sphereRight);
-                        $stmt->bindParam(':cylinder_left', $cylinderLeft);
-                        $stmt->bindParam(':cylinder_right', $cylinderRight);
-                        $stmt->bindParam(':axis_left', $axisLeft);
-                        $stmt->bindParam(':axis_right', $axisRight);
-                        $stmt->bindParam(':addition_left', $additionLeft);
-                        $stmt->bindParam(':addition_right', $additionRight);
-                        $stmt->bindParam(':dnp_left', $dnpLeft);
-                        $stmt->bindParam(':dnp_right', $dnpRight);
-                        $stmt->bindParam(':height_left', $heightLeft);
-                        $stmt->bindParam(':height_right', $heightRight);
-                        $stmt->bindParam(':notes', $notes);
-                        $stmt->bindParam(':price', $price);
+                            if ($counterRow) {
+                                $counterValue = $counterRow['current_value'] + 1;
+                            } else {
+                                $counterValue = 1;
 
-                        try {
-                            $stmt->execute();
-                            header("Location:".RUTA."consult_recipe.php?txtID=".$txtID);
-                            $connection = null;
-                            exit;
-                        } catch (PDOException $e) {
+                                $sqlInsertCounter = "INSERT INTO recipe_counter (current_value) VALUES (:current_value)";
+                                $stmtInsertCounter = $connection->prepare($sqlInsertCounter);
+                                $stmtInsertCounter->bindParam(':current_value', $counterValue);
+                                $stmtInsertCounter->execute();
+                            }
+
+                            $folio = 'RE' . str_pad($counterValue, 4, '0', STR_PAD_LEFT);
+
+                            // Incrementar el valor del contador en 1
+                            $sqlUpdateCounter = "UPDATE recipe_counter SET current_value = :new_value";
+                            $stmtUpdateCounter = $connection->prepare($sqlUpdateCounter);
+                            $stmtUpdateCounter->bindParam(':new_value', $counterValue);
+                            $stmtUpdateCounter->execute();
+
+                        // Generar el folio utilizando el valor del contador
+                            $folio = 'RE' . str_pad($counterValue, 4, '0', STR_PAD_LEFT);
+
+                            // Incrementar el valor del contador en 1
+                            $newCounterValue = $counterValue + 1;
+                            $sqlUpdateCounter = "UPDATE recipe_counter SET current_value = :new_value WHERE counter_id = 1";
+                            $stmtUpdateCounter = $connection->prepare($sqlUpdateCounter);
+                            $stmtUpdateCounter->bindParam(':new_value', $newCounterValue);
+                            $stmtUpdateCounter->execute();
+
+                            $sqlInsert = "INSERT INTO prescriptions (patient_id,folio,date,glass_type, sphere_left, sphere_right, cylinder_left, cylinder_right, axis_left, axis_right, addition_left, addition_right, dnp_left, dnp_right, height_left, height_right, notes, price)
+                            VALUES (:patient_id,:folio,:date,:glass_type, :sphere_left, :sphere_right, :cylinder_left, :cylinder_right, :axis_left, :axis_right, :addition_left, :addition_right, :dnp_left, :dnp_right, :height_left, :height_right, :notes, :price)";
                             
-                        }
+                            
+                            $stmt = $connection->prepare($sqlInsert);
+                            $stmt->bindParam(':patient_id', $patient_id);
+                            $stmt->bindParam(':date', $date);
+                            $stmt->bindParam(':folio', $folio);
+                            $stmt->bindParam(':glass_type', $glass_type);
+                            $stmt->bindParam(':sphere_left', $sphereLeft);
+                            $stmt->bindParam(':sphere_right', $sphereRight);
+                            $stmt->bindParam(':cylinder_left', $cylinderLeft);
+                            $stmt->bindParam(':cylinder_right', $cylinderRight);
+                            $stmt->bindParam(':axis_left', $axisLeft);
+                            $stmt->bindParam(':axis_right', $axisRight);
+                            $stmt->bindParam(':addition_left', $additionLeft);
+                            $stmt->bindParam(':addition_right', $additionRight);
+                            $stmt->bindParam(':dnp_left', $dnpLeft);
+                            $stmt->bindParam(':dnp_right', $dnpRight);
+                            $stmt->bindParam(':height_left', $heightLeft);
+                            $stmt->bindParam(':height_right', $heightRight);
+                            $stmt->bindParam(':notes', $notes);
+                            $stmt->bindParam(':price', $price);
 
-                        // Cerrar la conexión a la base de datos
-                     
+                            try {
+                                $stmt->execute();
+                                $mensaje = "Receta creada con exito";
+                                header("Location:".RUTA."consult_recipe.php?txtID=".$txtID."&msg=".$mensaje);
+                                $connection = null;
+                                exit;
+                            } catch (PDOException $e) {
+                                echo $e->getMessage();
+                            }
+
+                            // Cerrar la conexión a la base de datos
+                        
+                            }}
+                        }else{
+                            $error.="El paciente no existe en la base de datos";
                         }
-                    }else{
-                        $error.="El paciente no existe en la base de datos";
-                    }
-                        }
-                    }
                 
             }
-        
+                    
+        }
+            
 
                 
     

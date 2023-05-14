@@ -1,4 +1,14 @@
 <?php require('templates/header.php');?>   
+<?php if(isset($_GET['msg'])){ ?>
+<script>
+    Swal.fire(
+        {
+            icon:"success",
+            title:"<?php echo $_GET['msg']?>"
+        }
+        );
+</script>
+<?php } ?>
 <div class="recipe-head container ">
     <h2 class="patient">Paciente: <?php echo $patient_info["name"]?></h2>
     <a class="black-button"href="<?php echo RUTA?>consult_clients.php">
@@ -28,20 +38,32 @@
                         <td class="table__actions">
                             <a href="<?php echo RUTA?>scripts/generate_pdf.php?patient_id=<?php echo $patient_info["patient_id"]?>&recipe_id=<?php echo $recipe["prescription_id"]?>" class="button"  target="_blank"><i class="fa-solid fa-file-pdf"></i></i></a>
                             <a href="<?php echo RUTA?>edit_recipe.php?patient_id=<?php echo $patient_info["patient_id"]?>&recipe_id=<?php echo $recipe["prescription_id"]?>" class="button-green"><i class="fa-solid fa-pen-to-square"></i></i></a>
-                            <a href="<?php echo RUTA?>delete_recipe.php?patient_id=<?php echo $patient_info["patient_id"]?>&recipe_id=<?php echo $recipe["prescription_id"]?>" class="button-red"><i class="fa-solid fa-trash"></i></a>
+                            <a href="javascript:delete_r(<?php echo $patient_info["patient_id"]?>,<?php echo $recipe["prescription_id"]?>);" class="button-red"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
-                    <!-- <tr class="table__row">
-                        <td>03</td>
-                        <td>10/01/2023</td>
-                        <td class="table__actions">
-                            <a href="#" class="button" ><i class="fa-solid fa-file-pdf"></i></i></a>
-                            <a href="#" class="button-green"><i class="fa-solid fa-pen-to-square"></i></i></a>
-                            <a href="#" class="button-red"><i class="fa-solid fa-trash"></i></a>
-                        </td>
-                    </tr> -->
                 </tbody>
             </table>
         </div>
+        <script>
+            function delete_r(patient_id,recipe_id){
+                Swal.fire({
+                title: '¿Seguro que deseas borrar la receta?',
+                text: "Esta acción no se puede revertir",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#007E07',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, borrar receta!',
+                cancelButtonText: 'No, cancelar!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                        
+                    window.location = "<?php echo RUTA?>delete_recipe.php?delete_id="+patient_id+"&recipe_id="+recipe_id;
+                        
+                }
+                })
+
+                    }
+            </script>
 <?php require('templates/footer.php');?>

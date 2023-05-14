@@ -1,4 +1,14 @@
 <?php require('templates/header.php'); ?>
+<?php if(isset($_GET['msg'])){ ?>
+<script>
+    Swal.fire(
+        {
+            icon:"success",
+            title:"<?php echo $_GET['msg']?>"
+        }
+        );
+</script>
+<?php } ?>
         <div class="recipe-head container">
             <a class="black-button"href="<?php echo RUTA?>">
             <i class="fa-solid fa-house-chimney"></i>
@@ -9,7 +19,7 @@
             <p>Agregar Paciente</p>
             </a>
             <form class="form-search"action="">
-                <input type="text" name="search" class="form-search__input" placeholder="Buscar...">
+                <input type="text" name="search" class="form-search__input" placeholder="Buscar por nombre...">
                 <div class="form-search__bar">
                     <button type="submit" class="form-search__button">
                         <i class="fas fa-search"></i>
@@ -39,7 +49,7 @@
                         <td class="table__actions">
                             <a href="<?php echo RUTA?>consult_recipe.php?txtID=<?php echo $patient["patient_id"]?>" class="button" ><i class="fa-solid fa-eye"></i></a>
                             <a href="<?php echo RUTA?>edit_patient.php?txtID=<?php echo $patient["patient_id"]?>" class="button-green"><i class="fa-solid fa-user-pen"></i></a>
-                            <a href="<?php echo RUTA?>delete_patient.php?txtID=<?php echo $patient['patient_id']?>" class="button-red"><i class="fa-solid fa-trash"></i></a>
+                            <a href="javascript:borrar(<?php echo $patient["patient_id"]?>);" class="button-red"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php endforeach;?>
@@ -55,5 +65,25 @@
             </table>
             
             </div>
+            <script>
+                function borrar(id){
+                    Swal.fire({
+                    title: '¿Seguro que deseas borrar al paciente?',
+                    text: "Esta acción no se puede revertir",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#007E07',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, borrar paciente!',
+                    cancelButtonText: 'No, cancelar!'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        
+                        window.location = "<?php echo RUTA?>delete_patient.php?delete_id="+id;
+                        
+                    }
+                    })
 
+                                    }
+            </script>
 <?php require('templates/footer.php'); ?>

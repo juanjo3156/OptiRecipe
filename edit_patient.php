@@ -41,8 +41,8 @@ session_start();
                 $statement->bindParam(":date_of_birth",$date_of_birth);
     
                 $statement->execute();
-    
-                header("Location:".RUTA."consult_clients.php");
+                $mensaje = "Paciente actualizado con éxito";
+                header("Location:".RUTA."consult_clients.php?msg=".$mensaje);
     
             }
         

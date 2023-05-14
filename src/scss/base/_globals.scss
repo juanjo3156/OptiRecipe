@@ -210,6 +210,7 @@ a{
     text-transform: uppercase;
     color: #e1e1e1;
     background-color: v.$black;
+    border: 3px outset v.$black;
     
     flex-grow: 2;
     &:hover{
@@ -230,6 +231,7 @@ a{
 .save_button{
     @extend .submit-button;
     background-color: v.$green;
+    border: 3px outset v.$green;
     &:hover{
         cursor: pointer;
         background-color: lighten(v.$green, 10%);

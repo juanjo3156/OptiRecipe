@@ -23,8 +23,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $statement->bindParam(":date_of_birth",$date_of_birth);
 
             $statement->execute();
-
-            header("Location:".RUTA."consult_clients.php");
+            $mensaje = "Paciente creado con éxito";
+            header("Location:".RUTA."consult_clients.php?msg=".$mensaje);
 
         }
     

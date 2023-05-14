@@ -57,7 +57,9 @@ if(isset($_GET["patient_id"]) && isset($_GET["recipe_id"])){
        
         <div class="recipe__patient-info">
             <p>Paciente: <?php echo $patient_info["name"]?></p>
-            <p>Fecha de nacimiento: <?php echo $patient_info["date_of_birth"]?></p>
+            <?php $birthDate = date('d/m/Y', strtotime($patient_info['date_of_birth']));?>
+
+            <p>Fecha de nacimiento: <?php echo $birthDate?></p>
             <p>Teléfono: <?php echo $patient_info["phone"]?></p>
             <p>Correo electrónico: <?php echo $patient_info["email"]?></p>
         </div>

@@ -1,7 +1,7 @@
 <?php require("templates/header.php") ?>
 <div class="container form_new_container">
-    <h2>Nueva Receta</h2>
-    <i class="fa-solid fa-file-circle-plus"></i>
+    <h2>Editar Receta</h2>
+    <i class="fa-solid fa-file-pen"></i>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" class="form-recipe" method="post">
         <div class="form-recipe__field">
             <label for="pacient_name">Paciente:</label>

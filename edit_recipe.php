@@ -69,8 +69,8 @@
                 $statement->bindParam(':price', $price);
 
                 $statement->execute();
-    
-                header("Location:".RUTA."consult_recipe.php?txtID=".$patient_id);
+                $mensaje = "Receta actualizada con éxito";
+                header("Location:".RUTA."consult_recipe.php?txtID=".$patient_id."&msg=".$mensaje);
             }
         }
     }

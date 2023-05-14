@@ -1,4 +1,12 @@
 <?php require("templates/header.php");?>
+<script>
+    Swal.fire(
+        {
+            icon:"success",
+            title:"<?php echo $_GET['msg']?>"
+        }
+        );
+</script>
 <div class="container form_new_container">
         <h2>Editar Paciente</h2>
         <i class="fa-solid fa-user-pen"></i>
