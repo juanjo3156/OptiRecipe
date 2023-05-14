@@ -1,0 +1,23 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.pagination{
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    &__button{
+        display: inline-block;
+        background-color: v.$black;
+        color: #e1e1e1;
+        padding: 1rem;
+        width: 4%;
+        font-weight: 700;
+    }
+    &__current-page{
+        @extend .pagination__button;
+        background-color: lighten(v.$black,20%);
+    }
+    &__disabled{
+        background-color: v.$gray;
+    }
+}

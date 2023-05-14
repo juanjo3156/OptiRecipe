@@ -65,6 +65,30 @@
             </table>
             
             </div>
+            <?php if(count($patients)>0):?>
+            <div class="pagination container center">
+
+                <?php if ($currentPage > 1): ?>
+                    <a class="pagination__button" href="?page=<?php echo $currentPage - 1; ?>&search=<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>"><i class="fa-solid fa-arrow-left"></i></a>
+                <?php else: ?>
+                    <a class="pagination__disabled pagination__button" href="#"><i class="fa-solid fa-arrow-left"></i></a>
+                <?php endif; ?>
+                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                    <?php if ($i == $currentPage): ?>
+                        <a href="" class="pagination__current-page"><?php echo $i; ?></a>
+                    <?php else: ?>
+                        <a class="pagination__button" href="<?php echo RUTA ?>consult_clients.php?page=<?php echo $i; ?><?php if (isset($_GET['search'])) echo '&search=' . $_GET['search']; ?>"><?php echo $i; ?></a>
+                    <?php endif; ?>
+                <?php endfor; ?>
+                <?php if ($currentPage < $totalPages): ?>
+                    <a class="pagination__button" href="?page=<?php echo $currentPage + 1; ?>&search=<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>"><i class="fa-solid fa-arrow-right"></i></a>
+                <?php else: ?>
+                    <a class="pagination__disabled pagination__button"href="#"><i class="fa-solid fa-arrow-right"></i></a>
+
+                <?php endif; ?>
+            </div>
+            </div>
+            <?php endif; ?>
             <script>
                 function borrar(id){
                     Swal.fire({
