@@ -9,7 +9,7 @@
                 <i class="fa-solid fa-list"></i>
             </div>
         </a>
-        <a href="#"class="content__option">
+        <a href="<?php echo RUTA?>pending_invoices.php"class="content__option">
             <div>
                 <p>Facturas Pendientes</p>
                 <i class="fa-solid fa-file-invoice"></i>
