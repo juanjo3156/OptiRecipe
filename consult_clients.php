@@ -20,7 +20,7 @@
     $totalPatients = $statement->rowCount();
     
     // Definir la cantidad de pacientes por página
-    $patientsPerPage = 10;
+    $patientsPerPage = 9;
     
     // Calcular el número total de páginas
     $totalPages = ceil($totalPatients / $patientsPerPage);

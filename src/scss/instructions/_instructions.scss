@@ -5,11 +5,55 @@
     font-family: v.$secundary_font;
     &__tittle{
         text-align: center;
+        font-size: 3rem;
 
     }
     &__content{
         text-align: justify;
-        font-size: 1.2rem;
+        
+        text-align: center;
+    }
+    &__subtitle{
+        
+        padding-top: 2rem;
+        font-size: 3rem;
+        font-family: v.$principal_font;
+        color: darken(v.$gray,40%);
+    }
+    &__subtitle-line{
+        @extend .instructions__subtitle;
+        border-top: 2px dashed v.$black;
+    }
+    &__text{
+        font-size: 2rem;
+    }
+    &__step{
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    &__list{
+        display: inline-block;
+        text-align: left;
+        font-size: 2rem;
+    
+    }
+    .img{
+        margin: 0 auto;
+        width: 600px;
+        border: 2px solid v.$black;
+        &__mini{
+            width: 50px;
+        }
+        &__little{
+            width: 180px;
+
+        }
+        &__middle{
+            width: 400px;
+        border: 2px solid v.$black;
+            
+        }
     }
     
 }

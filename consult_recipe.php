@@ -11,7 +11,7 @@
         $statement->execute();
         $patient_info = $statement->fetch();
 
-        $statement = $connection->prepare("SELECT * FROM prescriptions WHERE  patient_id = :patient_id ORDER BY date DESC");
+        $statement = $connection->prepare("SELECT * FROM prescriptions WHERE patient_id = :patient_id ORDER BY date DESC, prescription_id DESC");
         $statement->bindParam(":patient_id",$txtID);
         $statement->execute();
         $recipes = $statement->fetchAll();
