@@ -9,7 +9,7 @@
         );
 </script>
 <?php } ?>
-        <div class="recipe-head container">
+        <div class="recipe-head container recipe-head_invoice">
             <a class="black-button"href="<?php echo RUTA?>">
             <i class="fa-solid fa-house-chimney"></i>
             <p>Menu principal</p>
@@ -19,26 +19,32 @@
             <p>Agregar factura pendiente</p>
             </a>
         </div>
-        <div class="table container">
+        <div class="table container ">
         <?php if(count($pending_invoices) > 0): // Verificar si se encontraron resultados ?>
            
-            <table class="table__content">
+            <table class="table__content pending_invoice_table">
                 <thead class="table__head">
                     <tr>
-                        <th class="table__head-element"><h2>Receta</h2></th>
+                        <th class="table__head-element"><h2>F.Receta</h2></th>
                         <th class="table__head-element"><h2>Paciente</h2></th>
+                        <th class="table__head-element"><h2>Hacer a nombre de:</h2></th>
+                        <th class="table__head-element"><h2>RFC</h2></th>
                         <th class="table__head-element"><h2>Monto</h2></th>
                         <th class="table__head-element"><h2>Tarjeta</h2></th>
+                        <th class="table__head-element"><h2>Uso de factura</h2></th>
                         <th class="table__head-element"><h2>Acciones</h2></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($pending_invoices as $pending_invoice):?>
-                    <tr class="table__row">
+                    <tr class="table__row invoice_table">
                         <td><?php echo $pending_invoice["prescription_folio"]?></td>
                         <td class="center"><?php echo $pending_invoice["name"]?></td>
+                        <td class="center"><?php echo $pending_invoice["in_name"]?></td>
+                        <td class="center"><?php echo $pending_invoice["rfc"]?></td>
                         <td class="center">$<?php echo $pending_invoice["amount"]?></td>
-                        <td><?php echo $pending_invoice["card_type"]?></td>
+                        <td class="center"><?php echo $pending_invoice["card_type"]?></td>
+                        <td class="center"><?php echo $pending_invoice["invoice_use"]?></td>
                         <td class="table__actions">
                             <a href="javascript:borrar(<?php echo $pending_invoice["invoice_id"]?>);" class="button-red"><i class="fa-solid fa-trash"></i></a>
                         </td>
